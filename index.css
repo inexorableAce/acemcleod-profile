@@ -196,6 +196,10 @@ body{
     overflow-y: scroll;
     scrollbar-color:#fff rgba(10, 97, 81, .4);
     scrollbar-width: thin;
+    
+}
+.profile p, .profile b{
+    font-size: 18px;
 }
 .profile::-webkit-scrollbar, .friends::-webkit-scrollbar {
     width: 5px;      
