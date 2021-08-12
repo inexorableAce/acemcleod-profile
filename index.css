@@ -30,7 +30,7 @@ html, body{
     width: 100%;
     margin: 0;
     padding: 0px;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 body{
     background-image: url(imgs/slides/tilt5.jpg);
@@ -43,28 +43,26 @@ body{
     align-items: center;
     justify-content: center;
     height: 100%;
-    width: 100%;
+    width: 150%;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 .glassWindow{
     width: 700px;
     height: 450px;
-    border: 1px solid rgba(10, 97, 81, .4);
+    border: 1px solid rgba(10, 97, 81,1);
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    background:rgba(10, 97, 81, .5);
+    background:rgba(10, 97, 81, .9);
 }
-@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-    .glassWindow {
-        background:rgba(10, 97, 81, .1);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-    }
-  }
+
 .glassWindow.side{
-    position: absolute;
     background:rgba(10, 97, 81, 0);
 }
 .glassWindow.side:nth-child(1){
-    transform: translate(-100%, -0%) perspective(600px) rotateY(20deg) scale(1.25);
+    transform: perspective(600px) rotateY(20deg) scale(1.25);
+}
+.glassWindow.side:nth-child(3){
+    transform: perspective(600px) rotateY(-20deg) scale(1.25);
 }
 .glassWindow.side:nth-child(1) .content{
     background-image: url(imgs/slides/tilt3.png);
@@ -73,11 +71,9 @@ body{
     background-size: cover;
     transition: background-image 1s ease-in-out;
     animation: slide 60s linear forwards infinite;
-    opacity: .7;
+    opacity: 1;
 }
-.glassWindow.side:nth-child(3){
-    transform: translate(100%, -0%) perspective(600px) rotateY(-20deg) scale(1.25);
-}
+
 .glassWindow.side:nth-child(3) .content{
     background-image: url(imgs/slides/tilt4.png);
     background-position: center;
@@ -85,7 +81,7 @@ body{
     background-size: cover;
     transition: background-image 1s ease-in-out;
     animation: slide 60s linear reverse infinite;
-    opacity: .7;
+    opacity: 1;
 }
 @keyframes slide{
     0%{
@@ -129,13 +125,14 @@ body{
 .glassWindow > .bar{
     width: 100%;
     height: 35px;
-    background:rgba(10, 97, 81, .2);
+    background:rgba(10, 97, 81, 1);
     line-height: 35px;
     padding: 0 0 0 20px;
     font-family: 'Altima';
     font-size: 32px;
     position: relative;
 }
+
 .bar > .left{
     position: absolute;
     top: 0;
@@ -154,7 +151,7 @@ body{
     flex-wrap: wrap;
 }
 .content > .section{
-    border: 1px solid rgba(10, 97, 81, .4);
+    border: 1px solid rgba(10, 97, 81, 1);
     padding: 10px;
     margin: 5px;
 }
@@ -163,9 +160,10 @@ body{
     height: calc(70% - 10px);
     border: 0px;
     padding: 0px;
+    position: relative;
 }
 .content > .pic > .picture{
-    height: 80%;
+    height: 100%;
     width: 100%;
     background-image: url(imgs/profile.png);
     background-size: cover;
@@ -173,8 +171,15 @@ body{
     background-repeat: no-repeat;
 }
 .content > .pic > .other{
+    height: 100%;
+    width: 100%;
     padding: 10px;
-    line-height: 155%;
+    line-height: 130%;
+    display: table-cell;
+    position: absolute;
+    top: 0;
+    left: 0;
+    vertical-align: bottom;
 }
 
 .content > .profile{
@@ -201,11 +206,22 @@ body{
     scrollbar-color:#fff rgba(10, 97, 81, .4);
     scrollbar-width: thin;
 }
+.center{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
 .content > .friends img{
     display: inline-block;
     margin-right: 14px;
     margin-top: 14px;
-    width: 40%;
+    width: 50px;
+}
+.content > .inventory img{
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 14px;
+    width: 40px;
 }
 .content > .friends img:nth-child(even){
     margin-right: 0px;
@@ -214,3 +230,24 @@ body{
     width: calc(72% - 10px);
     height: calc(30% - 10px);
 }
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+    .glassWindow {
+        background:rgba(10, 97, 81, .1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(10, 97, 81, .4);
+    }
+    .glassWindow > .bar{
+        background:rgba(10, 97, 81, .2);
+    }
+    .content > .section{
+        border: 1px solid rgba(10, 97, 81, .4);
+    }
+    .glassWindow.side:nth-child(1) .content{
+        opacity: .7;
+    }
+    
+    .glassWindow.side:nth-child(3) .content{
+        opacity: .7;
+    }
+  }

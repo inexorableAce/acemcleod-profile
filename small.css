@@ -1,0 +1,35 @@
+@media (max-width: 800px){
+    .glassWindow{
+        height: 90%;
+        width: 90%;
+    }
+    .glassWindow.side:nth-child(1){
+        display: none
+    }
+    .glassWindow.side:nth-child(3){
+        display: none
+    }
+    .content > .pic{
+        width: calc(100% - 10px);
+        height: calc(30% - 10px);
+        border: 0px;
+        padding: 0px;
+    }
+    .content > .pic > .picture{
+        height: 100%;
+        width: 100%;
+        background-image: url(imgs/profile.png);
+        background-size: cover;
+        background-position: center 30%;
+        background-repeat: no-repeat;
+        display: inline-block;
+    }
+    .content > .profile{
+        width: calc(100% - 10px);
+        height: calc(40% - 10px);
+    }
+    .content > .inventory, .content > .friends{
+        width: calc(100% - 10px);
+        height: calc(15% - 10px);
+    }
+}

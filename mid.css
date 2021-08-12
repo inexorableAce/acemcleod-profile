@@ -1,0 +1,22 @@
+@media (max-width: 1800px){
+    .wrapper{
+        flex-direction: column;
+    }
+    .glassWindow.side:nth-child(1){
+        transform: perspective(0px) rotateY(0deg) scale(1);
+    }
+    .glassWindow.side:nth-child(3){
+        transform: perspective(0px) rotateY(0deg) scale(1);
+    }
+}
+@media (max-height: 800px) and (max-width: 1500px){
+    .wrapper{
+        flex-direction: column;
+    }
+    .glassWindow.side:nth-child(1){
+        display: none
+    }
+    .glassWindow.side:nth-child(3){
+        display: none
+    }
+}
