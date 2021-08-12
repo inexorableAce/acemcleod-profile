@@ -9,7 +9,7 @@
         transform: perspective(0px) rotateY(0deg) scale(1);
     }
 }
-@media (max-height: 800px) and (max-width: 1500px){
+@media (max-height: 800px) and (max-width: 1800px){
     .wrapper{
         flex-direction: column;
     }
