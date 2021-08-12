@@ -30,7 +30,7 @@ html, body{
     width: 100%;
     margin: 0;
     padding: 0px;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 body{
     background-image: url(imgs/slides/tilt5.jpg);
@@ -45,7 +45,6 @@ body{
     height: 100%;
     width: 100%;
 }
-
 .glassWindow{
     width: 700px;
     height: 450px;
@@ -53,10 +52,11 @@ body{
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     background:rgba(10, 97, 81, .5);
 }
-@supports (backdrop-filter: blur(10px)) {
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
     .glassWindow {
         background:rgba(10, 97, 81, .1);
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
   }
 .glassWindow.side{
