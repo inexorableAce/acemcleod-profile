@@ -28,8 +28,12 @@
         width: calc(100% - 10px);
         height: calc(40% - 10px);
     }
-    .content > .inventory, .content > .friends{
-        width: calc(100% - 10px);
-        height: calc(15% - 10px);
+    .content > .friends{
+        width: calc(50% - 10px);
+        height: calc(30% - 10px);
+    }
+    .content > .inventory{
+        width: calc(50% - 10px);
+        height: calc(30% - 10px);
     }
 }

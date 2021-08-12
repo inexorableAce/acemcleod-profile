@@ -201,13 +201,13 @@ body{
 .profile p, .profile b{
     font-size: 18px;
 }
-.profile::-webkit-scrollbar, .friends::-webkit-scrollbar {
+.profile::-webkit-scrollbar, .friends::-webkit-scrollbar, .inventory::-webkit-scrollbar {
     width: 5px;      
 }
-.profile::-webkit-scrollbar-track, .friends::-webkit-scrollbar-track {
+.profile::-webkit-scrollbar-track, .friends::-webkit-scrollbar-track, .inventory::-webkit-scrollbar-track {
     background: rgba(10, 97, 81, .4); 
 }
-.profile::-webkit-scrollbar-thumb, .friends::-webkit-scrollbar-thumb {
+.profile::-webkit-scrollbar-thumb, .friends::-webkit-scrollbar-thumb, .inventory::-webkit-scrollbar-thumb {
     background-color: #fff 
 }
 .content > .friends{
@@ -241,6 +241,9 @@ body{
 .content > .inventory{
     width: calc(72% - 10px);
     height: calc(30% - 10px);
+    overflow-y: scroll;
+    scrollbar-color:#fff rgba(10, 97, 81, .4);
+    scrollbar-width: thin;
 }
 @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
     .glassWindow {
